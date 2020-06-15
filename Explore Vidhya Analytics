@@ -1,0 +1,85 @@
+##import pandas
+import pandas as pd
+
+##imported sample data file
+analytics = pd.read_excel(r"C:\Users\ajens\OneDrive\Documents\Elmhurst\Data Mining & Business Intelligence\Loan Prediction_Train.xlsx")
+
+##print analytics file to see the variables as they have been uploaded
+print(analytics)
+
+#descriptive stats: mean applicant income
+analytics['ApplicantIncome'].mean()
+
+#descriptive stats: median applicant income
+analytics['ApplicantIncome'].median()
+
+#descriptive stats: mean coapplicant income
+analytics['CoapplicantIncome'].mean()
+
+#descriptive stats: median coapplicant income
+analytics['CoapplicantIncome'].median()
+
+#descriptive stats: mean coapplicant income
+analytics['LoanAmount'].mean()
+
+#descriptive stats: median coapplicant income
+analytics['LoanAmount'].median()
+
+#getting descriptive statistics on numeric variables
+analytics.describe()
+
+#Getting frequency for categorical variable gender, including missing (though none missing 'NaN') 
+#1=male, 2=female
+analytics['Gender'].value_counts(dropna=False)
+
+#Getting percentages for frequency table above gender by using normalize sub-commandand multiplying by 100
+#1=male, 2=female
+100 * analytics['Gender'].value_counts(dropna=False, normalize=True)
+
+#Getting frequency for categorical variable married, including missing (though none missing 'NaN')
+#1=yes, 2=no
+analytics['Married'].value_counts(dropna=False)
+
+#Getting percentages for frequency table above married by using normalize sub-commandand multiplying by 100
+#1=yes, 2=no
+100 * analytics['Married'].value_counts(dropna=False, normalize=True)
+
+#Getting frequency for categorical variable dependents, including missing (though none missing 'NaN')
+#0=0, 1=1, 2=2, 3=3+
+analytics['Dependents'].value_counts(dropna=False)
+
+#Getting percentages for frequency table above dependents by using normalize sub-commandand multiplying by 100
+#0=0, 1=1, 2=2, 3=3+
+100 * analytics['Dependents'].value_counts(dropna=False, normalize=True)
+
+#Getting frequency for categorical variable education, including missing (though none missing 'NaN')
+#1=graduate, 2=non-graduate
+analytics['Education'].value_counts(dropna=False)
+
+#Getting percentages for frequency table above education by using normalize sub-commandand multiplying by 100
+#1=graduate, 2=non-graduate
+100 * analytics['Education'].value_counts(dropna=False, normalize=True)
+
+#Getting frequency for categorical variable self employed, including missing (though none missing 'NaN')
+#1=yes, 2=no
+analytics['Self_Employed'].value_counts(dropna=False)
+
+#Getting percentages for frequency table above self employed by using normalize sub-commandand multiplying by 100
+#1=yes, 2=no
+100 * analytics['Self_Employed'].value_counts(dropna=False, normalize=True)
+
+#Getting frequency for categorical variable property area, including missing (though none missing 'NaN')
+#1=urban, 2=rural, 3=semiurban
+analytics['Property_Area'].value_counts(dropna=False)
+
+#Getting percentages for frequency table above property area by using normalize sub-commandand multiplying by 100
+#1=urban, 2=rural, 3=semiurban
+100 * analytics['Property_Area'].value_counts(dropna=False, normalize=True)
+
+#Getting frequency for categorical variableloan status, including missing (though none missing 'NaN')
+#1=yes, 2=no
+analytics['Loan_Status'].value_counts(dropna=False)
+
+#Getting percentages for frequency table above loan status by using normalize sub-commandand multiplying by 100
+#1=yes, 2=no
+100 * analytics['Loan_Status'].value_counts(dropna=False, normalize=True)
